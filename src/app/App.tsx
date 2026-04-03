@@ -686,83 +686,104 @@ export default function App() {
               Previously...
             </SectionHeading>
             <FestivalText>It was MARVELLOUS</FestivalText>
-            <div className="flex gap-3 overflow-x-auto pb-2 -mx-8 px-8 scrollbar-none">
-              {[
-                {
-                  caption: "Friday night fire",
-                  src: "/images/IMG_8331.jpeg",
-                  bg: "from-pink-500/30 to-pink-500/5",
-                  border: "border-pink-500/40",
-                },
-                {
-                  caption: "The great picnic",
-                  bg: "from-yellow-500/30 to-yellow-500/5",
-                  border: "border-yellow-500/40",
-                },
-                {
-                  caption: "Squiffy's Bar",
-                  bg: "from-cyan-500/30 to-cyan-500/5",
-                  border: "border-cyan-500/40",
-                },
-                {
-                  caption: "Live music",
-                  bg: "from-purple-500/30 to-purple-500/5",
-                  border: "border-purple-500/40",
-                },
-                {
-                  caption: "Art installations",
-                  bg: "from-orange-500/30 to-orange-500/5",
-                  border: "border-orange-500/40",
-                },
-                {
-                  caption: "Fish & chips queue",
-                  bg: "from-green-500/30 to-green-500/5",
-                  border: "border-green-500/40",
-                },
-                {
-                  caption: "Sunday walk",
-                  bg: "from-cyan-500/30 to-cyan-500/5",
-                  border: "border-cyan-500/40",
-                },
-                {
-                  caption: "Betsey Wynne",
-                  bg: "from-pink-500/30 to-pink-500/5",
-                  border: "border-pink-500/40",
-                },
-                {
-                  caption: "Jam session",
-                  bg: "from-purple-500/30 to-purple-500/5",
-                  border: "border-purple-500/40",
-                },
-                {
-                  caption: "Sunday gossip",
-                  bg: "from-yellow-500/30 to-yellow-500/5",
-                  border: "border-yellow-500/40",
-                },
-              ].map(({ caption, src, bg, border }, i) => (
+            {(() => {
+              const photos = [
+                { caption: "Friday night fire", src: "/images/IMG_8331.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "The great picnic", src: "/images/IMG_8318.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "Squiffy's Bar", src: "/images/Scan1.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "Live music", src: "/images/Scan2.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "Art installations", src: "/images/Scan3.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "Fish & chips queue", src: "/images/Scan4.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "Sunday walk", src: "/images/Scan5.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "Betsey Wynne", src: "/images/Scan6.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "Jam session", src: "/images/Scan8.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "Sunday gossip", src: "/images/Scan9.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/Scan10.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/Scan11.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/Scan12.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/Scan13.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/Scan14.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/Scan15.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/Scan16.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/Scan17.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/Scan18.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/Scan19.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/Scan20.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/Scan21.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/Scan22.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/Scan23.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/Scan24.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/Scan25.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/Scan26.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/Scan27.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/Scan28.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/Scan29.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/Scan30.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/Scan31.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/Scan32.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/Scan33.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/Scan34.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/Scan36.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/Scan37.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/Scan38.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/Scan39.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/Scan40.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/Scan41.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/Scan42.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/Scan43.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/Scan44.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/Scan45.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/Scan47.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/Scan48.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/Scan49.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/Scan50.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/Scan51.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/Scan52.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/Scan53.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/Scan54.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/Scan55.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/Scan56.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/Scan57.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/Scan58.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/Scan59.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/Scan60.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/Scan61.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/08a582fa-1445-4ec8-b92b-a8e5ee716196.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/1eafcc7c-b97e-4207-b0ca-48aeec97eb67.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/2549b82c-5329-4ac5-84da-718711566041.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/30618e14-eb42-459c-97c9-4c533c1906dd.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/53b911fb-a224-4918-abbf-c2cd31ae19e5.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+                { caption: "", src: "/images/79fe2131-462e-4b86-8480-21c00be26ff9.jpeg", bg: "from-cyan-500/30 to-cyan-500/5", border: "border-cyan-500/40" },
+                { caption: "", src: "/images/7c8d8d2e-4fdb-4189-af0d-cb1f8fe133e0.jpeg", bg: "from-purple-500/30 to-purple-500/5", border: "border-purple-500/40" },
+                { caption: "", src: "/images/ba65c436-8a65-4ca7-a6d7-30f32be32913.jpeg", bg: "from-orange-500/30 to-orange-500/5", border: "border-orange-500/40" },
+                { caption: "", src: "/images/bda83b08-c05e-46d2-b984-4850060b2a84.jpeg", bg: "from-green-500/30 to-green-500/5", border: "border-green-500/40" },
+                { caption: "", src: "/images/ef5c3176-80ef-4a9f-b6cf-10bdcd852a77.jpeg", bg: "from-yellow-500/30 to-yellow-500/5", border: "border-yellow-500/40" },
+                { caption: "", src: "/images/f324ae69-9900-4348-b9bd-398c5c64b9ff.jpeg", bg: "from-pink-500/30 to-pink-500/5", border: "border-pink-500/40" },
+              ];
+              const row1 = photos.filter((_, i) => i % 2 === 0);
+              const row2 = photos.filter((_, i) => i % 2 === 1);
+              const renderPhoto = ({ caption, src, bg, border }: typeof photos[0], i: number) => (
                 <motion.figure
-                  key={i}
+                  key={src}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.04 }}
+                  transition={{ duration: 0.4, delay: i * 0.03 }}
                   className="shrink-0 w-48 flex flex-col gap-2"
                 >
-                  <div
-                    className={`w-48 h-48 rounded-xl bg-gradient-to-b ${bg} border ${border} overflow-hidden flex items-center justify-center text-4xl`}
-                  >
-                    {src ? (
-                      <img src={src} alt={caption} className="w-full h-full object-cover" />
-                    ) : (
-                      "📷"
-                    )}
+                  <div className={`w-48 h-48 rounded-xl bg-gradient-to-b ${bg} border ${border} overflow-hidden flex items-center justify-center text-4xl`}>
+                    {src ? <img src={src} alt={caption} className="w-full h-full object-cover" /> : "📷"}
                   </div>
-                  <figcaption className="text-white/50 text-sm text-center">
-                    {caption}
-                  </figcaption>
+                  {caption && <figcaption className="text-white/50 text-sm text-center">{caption}</figcaption>}
                 </motion.figure>
-              ))}
-            </div>
+              );
+              return (
+                <div className="flex flex-col gap-3">
+                  <div className="flex gap-3 overflow-x-auto pb-1 -mx-8 px-8 scrollbar-none">{row1.map(renderPhoto)}</div>
+                  <div className="flex gap-3 overflow-x-auto pb-2 -mx-8 px-8 scrollbar-none">{row2.map(renderPhoto)}</div>
+                </div>
+              );
+            })()}
           </div>
 
           {/* Practical info */}
